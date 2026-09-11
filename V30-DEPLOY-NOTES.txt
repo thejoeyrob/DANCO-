@@ -1,0 +1,27 @@
+DANCO WORKFORCE ASSESSMENT — STANDARD + DANCO+ v30
+
+This release preserves v29 assessment, screening and employment-contract behavior and adds the buyer-facing “Why Danco+?” presentation.
+
+PITCH EXPERIENCE
+- Offered once after language selection to an activated trial/owner device.
+- Play or Skip.
+- Replay at any time from “Why Danco+?”.
+- Dan and Brenda alternate on screen with animated foreground/background staging.
+- U.S.-English device TTS selects two distinct en-US voices where available.
+- Captions remain visible, so the pitch still works if speech synthesis is unavailable.
+- Manual previous/next, pause/play and mute controls are included.
+
+COMMERCIAL POSITIONING
+The pitch sells Danco+ as a Danco-specific connected hiring workflow: application, DISC, role assessment, interview direction, background-screening orchestration, official Danco agreement generation, signed-file progression and payroll handoff. It does not claim exclusivity against generic ATS/HR products.
+
+DEPLOYMENT
+Upload/replace the flat package at the root of the GitHub Pages repository. Existing Supabase endpoints remain unchanged.
+
+V30 BACKGROUND-SCREENING CORRECTION
+- Restores the working cost-approval screening demonstration.
+- Corrects the screening-status compatibility issue that could surface as "Server error" after approval.
+- Applicant report now shows status-only category outcomes (Clear / Review required / No record / No match).
+- Full demonstration screening documents are filed under the new in-app Background Check Reports folder using the matching application reference.
+- Prototype full reports are clearly marked DEMONSTRATION ONLY — NOT A CONSUMER REPORT.
+- Successful demonstration results file automatically to BG checked · Eligible.
+- Unsuccessful demonstration results file automatically to BG checked · Not eligible and keep contract creation blocked.

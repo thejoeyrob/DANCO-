@@ -1,0 +1,46 @@
+Danco Workforce Assessment — Standard + Danco+ v36
+
+FULL PWA DEPLOYMENT
+Replace the hosted repository contents with the complete flat package rather than mixing files with a previous release. The service-worker cache has been bumped to v36 so updated JavaScript/CSS is pulled after deployment.
+
+SHARED DATA / BACKEND
+This release uses the Danco Supabase shared service v6 plus the one-use Danco candidate-invite service. Existing application and assessment data remains in the same Danco submission database.
+
+KEY CHANGES
+1. Commercial Account Manager league table
+   - Loads full historical + future account-manager assessment data from the shared database.
+   - Includes completed reports in any normal queue except Archived or Background checked — Not eligible.
+   - Overall suitability is the default ranking.
+   - Sortable Experience, Network, Development, Consultative and Commercial columns.
+   - Remove from league table does not move the report or alter its workflow status.
+   - Removed reports have Restore controls in both the removed list and relevant report view.
+
+2. Admin readability
+   - Opaque white report surfaces and high-contrast table typography.
+   - Leaderboard retains premium Danco navy styling but its report table is deliberately high-contrast.
+
+3. Background screening demonstration report
+   - Opens in-app rather than as a dead-end page.
+   - Matching Danco report layout.
+   - Close/Return control.
+   - Print / Save PDF control.
+
+4. Owner-created candidate links
+   - Owner chooses role and optional welcome name.
+   - Generates a secret one-use link with copy control.
+   - Candidate sees Standard Danco presentation with no prototype highlights.
+   - Role is preselected/fixed.
+   - Sensitive application fields are optional; full name and privacy acknowledgement are mandatory.
+   - Before timed assessment begins, reopening returns to the invitation welcome screen.
+   - Starting timed assessment locks the invite to that assessment journey.
+   - On the originating browser, assessment state/timer resumes rather than resetting.
+   - Completed links reopen to results only and may submit once.
+   - Link-originated report references display with LINK- prefix.
+
+5. Assessment timing/accessibility
+   - Standard mode: question + answers immediately available for 45 seconds total.
+   - Reading/sight support: unlimited untimed question narration/repeat before Reveal Answers.
+   - Reveal Answers starts a 60-second answer timer.
+   - Answer options are spoken only when selected.
+   - Final answer uses an additional spoken confirmation dialog with green Yes / red No controls.
+   - Timeout records the selected answer if one exists; otherwise it records Not answered.

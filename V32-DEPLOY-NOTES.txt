@@ -1,0 +1,15 @@
+DANCO WORKFORCE ASSESSMENT · STANDARD + DANCO+ v32
+
+FIXES INCLUDED
+- Rebuilt all 10 Danco+ presentation narration clips from the exact on-screen scene script.
+- Restored scene 06: “Danco paperwork, without re-keying the candidate” with complete Brenda narration.
+- Added one-to-one audio/scene integrity guard so an omitted clip cannot silently shift the presentation.
+- Added audio preloading for the next scene and automatic device-voice fallback if a hosted premium clip fails.
+- Prevents a failed clip from silently skipping a scene; captions remain synchronized with the currently displayed scene.
+- Reworked Danco+ header mode control using the official Danco roof/wordmark rendered in metallic gold.
+- Standard state uses the gold Danco logo; Danco+ state swaps to a realigned Danco+ mark with a digitally hand-drawn glowing plus.
+- Corrected Danco+ pitch geometry on desktop/tablet so Dan and Brenda remain visible focal characters and the text card no longer covers them.
+- Preserves v30/v31 background-screening, employment agreement, secure filing, Supabase and premium-assessment narration functionality.
+
+DEPLOYMENT
+Upload every file from the flat package to the repository root. v32 uses a new service-worker cache key to remove stale v31 geometry/audio.

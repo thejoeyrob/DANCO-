@@ -1,0 +1,19 @@
+DANCO WORKFORCE ASSESSMENT · STANDARD + DANCO+ v31
+
+KEY CHANGES
+- Premium Dan + Brenda American-English narration is used for the Danco+ pitch and primary assessment delivery.
+- English alternates Dan and Brenda; Spanish uses Brenda.
+- Existing local recorded narration remains as a resilient fallback; Device default reader remains an optional Help setting only.
+- Danco+ pitch dialogue revised with natural Dan/Brenda handoffs and a stronger payroll-ready commercial close.
+- Long desktop/tablet forms now keep the character guide stage sticky and visible while the form scrolls.
+- Character staging varies subtly by step without obscuring content.
+- Header STANDARD / DANCO+ badge is now an in-place mode switch. Approved users can switch presentation state without losing page/progress; locked users are taken to the Danco+ trial request.
+- Admin visual hierarchy simplified without removing controls.
+- Danco+ prestige styling strengthened with restrained metallic-gold detail while preserving Danco navy/blue.
+- v30 corrected background-check workflow, report filing and employment-contract functions are preserved.
+
+AUDIO NOTE
+Premium Dan/Brenda narration uses generated hosted voice assets. The bundled v30 recorded narration pack remains available as a local fallback. The optional Device default reader remains available from Help for users who specifically choose it.
+
+DEPLOYMENT
+Upload/replace the flat files in the repository root. Service worker cache is v31 and will replace earlier cached app shells.

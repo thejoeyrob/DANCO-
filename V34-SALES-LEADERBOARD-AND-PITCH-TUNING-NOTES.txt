@@ -1,0 +1,9 @@
+Danco Workforce Assessment — Standard + Danco+ v34
+
+Changes:
+- Added sales suitability leaderboard for Commercial Account Manager applications and assessment-only submissions.
+- Default ranking is by Overall suitability, with sortable category headings: Experience, Network, Development, Consultative, Commercial.
+- Added winner panel and non-identifying welcome illustration asset.
+- Preserved recorded Danco+ pitch audio as default and tuned playback cadence slightly for a more upbeat delivery.
+- Added direct open action from leaderboard rows into the applicant report.
+- Updated service-worker cache name and asset versions to force fresh deployment.

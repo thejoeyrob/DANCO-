@@ -1,0 +1,15 @@
+DANCO WORKFORCE ASSESSMENT — v33 AUDIO HOTFIX
+
+Purpose
+- Restores the Danco+ presentation to recorded Dan/Brenda audio files by default.
+- Removes automatic device/speech-synthesis fallback from the Danco+ presentation.
+- Replaces scene 06 with the corrected “Danco paperwork, without re-keying the candidate” recorded clip.
+- Retains all v32 geometry, character visibility and Danco+ gold branding changes.
+- One-time v33 settings migration restores Recorded / Danco voices as the default; device voice remains an explicit user choice only.
+- Service worker cache bumped so stale v32 app.js cannot keep the broken audio routing.
+
+Regression guard
+- 10 presentation scenes and 10 recorded MP3 URLs are hard-checked at startup.
+- Audio order is scene-locked.
+- Next scene is preloaded.
+- On a recorded-audio load failure the presentation stops and offers retry; it does NOT silently switch to a robot voice.

@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b3f89">
+  <meta name="description" content="Danco Roofing applicant workforce assessment prototype.">
+  <meta property="og:title" content="Danco Workforce Assessment">
+  <meta property="og:description" content="A fair, accessible and bilingual operational workforce assessment.">
+  <meta property="og:image" content="social-preview.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest?v=36.0.0">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="app.css?v=36.0.0">
+  <title>Danco Workforce Assessment · Prototype</title>
+</head>
+<body class="prototype-locked">
+  <div class="prototype-watermark" aria-hidden="true"><span>PROTOTYPE</span><span>PROTOTYPE</span><span>PROTOTYPE</span></div>
+
+  <header class="app-header">
+    <button class="brand-button" type="button" data-action="home" aria-label="Danco assessment home">
+      <img src="danco-logo-white.png" alt="Danco Roofing Services, Inc.">
+      <span><b>Danco Workforce Assessment</b><small>Assessment &amp; applications</small></span>
+    </button>
+    <div class="header-actions">
+      <button class="status-pill danco-plus-header-status danco-plus-mode-switch" id="danco-plus-header-status" type="button" aria-label="Toggle Standard and Danco+" aria-pressed="false" data-mode="standard"><span class="danco-plus-switch-art" aria-hidden="true"><img class="danco-plus-switch-logo standard-logo" src="danco-logo-gold.png" alt=""><img class="danco-plus-switch-logo plus-logo" src="danco-plus-logo-gold.png" alt=""></span><span class="danco-plus-switch-state">STANDARD</span></button><span class="status-pill" id="access-status">PROTOTYPE</span>
+      <button class="icon-button" id="language-toggle" type="button" aria-label="Change language">ES</button>
+      <button class="icon-button" id="audio-toggle" type="button" aria-label="Toggle audio support">🔊</button>
+      <button class="icon-button" id="fullscreen-toggle" type="button" aria-label="Toggle full screen">⛶</button>
+      <button class="icon-button" id="admin-open" type="button" aria-label="Administrator access">⚙</button>
+    </div>
+  </header>
+  <button class="immersive-exit" id="immersive-exit" type="button" aria-label="Exit full-screen app view">⛶ <span>Exit full screen</span></button>
+
+  <main id="app" tabindex="-1">
+    <section class="screen" id="invite-welcome-screen" aria-labelledby="invite-welcome-title">
+      <div class="hero-shell invite-welcome-shell">
+        <img class="hero-helper hero-helper-left" src="danco-helper-english.png" alt="Danco team guide">
+        <div class="hero-copy invite-welcome-copy">
+          <span class="eyebrow">DANCO ROOFING SERVICES, INC.</span>
+          <h1 id="invite-welcome-title">Welcome</h1>
+          <p class="lead" id="invite-welcome-message">The Danco team would like you to complete an application and role assessment.</p>
+          <div class="invite-role-card"><span>INVITED ROLE</span><b id="invite-welcome-role">Role</b><small>Your application, work-style profile and role-specific assessment will be submitted securely to Danco for review.</small></div>
+          <p class="privacy-line">Private candidate link · One assessment completion · Danco recruitment use</p>
+          <button class="button button-gold button-wide" id="invite-welcome-continue" type="button">Continue to language selection</button>
+        </div>
+        <img class="hero-helper hero-helper-right" src="danco-helper-spanish.png" alt="Danco team guide">
+      </div>
+    </section>
+
+    <section class="screen active" id="language-screen" aria-labelledby="language-title">
+      <div class="hero-shell">
+        <img class="hero-helper hero-helper-left slide-left" src="danco-helper-english.png" alt="Friendly Danco team helper holding a clipboard">
+        <div class="hero-copy">
+          <span class="eyebrow" id="product-eyebrow">DANCO ROOFING SERVICES, INC. · WORKFORCE &amp; APPLICANT PROTOTYPE</span>
+          <h1 id="language-title">Welcome to Danco</h1>
+          <p class="lead">Choose your language first. You can then take the Danco Workforce Assessment or apply to work at Danco, depending on how this device has been configured.</p>
+          <div class="language-grid" role="group" aria-label="Choose language">
+            <button class="language-card" type="button" data-language="en">
+              <span class="language-icon">EN</span><span><b>Continue in English</b><small>Danco workforce assessment &amp; applications</small></span><span class="arrow">→</span>
+            </button>
+            <button class="language-card" type="button" data-language="es">
+              <span class="language-icon">ES</span><span><b>Continuar en español</b><small>Evaluación y solicitudes de Danco</small></span><span class="arrow">→</span>
+            </button>
+          </div>
+          <div class="locked-callout" id="locked-callout">
+            <div><b>Prototype access is currently locked</b><span>Use the private access code supplied by Danco to activate a three-assessment trial on this browser or device.</span></div>
+            <button class="button button-gold" type="button" data-action="open-unlock">Unlock trial</button>
+          </div>
+          <p class="privacy-line">Fair &amp; inclusive · Secure &amp; confidential · Built for the Danco team</p>
+          <button class="danco-plus-story-button" type="button" data-action="open-danco-plus-pitch"><span aria-hidden="true">▶</span><span>Why Danco+?</span><small>See the connected hiring story</small></button>
+        </div>
+        <img class="hero-helper hero-helper-right slide-right" src="danco-helper-spanish.png" alt="Friendly Danco team helper holding a tablet">
+      </div>
+    </section>
+
+    <section class="screen" id="journey-choice-screen" aria-labelledby="journey-choice-title">
+      <div class="content-shell journey-choice-shell">
+        <div class="panel journey-choice-panel">
+          <span class="eyebrow">DANCO ROOFING SERVICES, INC.</span>
+          <h2 id="journey-choice-title" data-i18n="journeyChoiceTitle">What would you like to do?</h2>
+          <p class="lead small" data-i18n="journeyChoiceLead">Choose the route that applies to you. Danco can also lock this device to one route from the protected administrator settings.</p>
+          <div class="journey-choice-grid">
+            <button class="journey-choice-card" type="button" data-journey-mode="assessment">
+              <span class="journey-choice-icon">✓</span><span><b data-i18n="journeyAssessmentTitle">Danco Workforce Assessment</b><small data-i18n="journeyAssessmentCopy">For existing employees, internal development, refresher assessment or assessment-only use.</small></span><span class="arrow">→</span>
+            </button>
+            <button class="journey-choice-card" type="button" data-journey-mode="application">
+              <span class="journey-choice-icon">＋</span><span><b data-i18n="journeyApplicationTitle">Apply to work at Danco</b><small data-i18n="journeyApplicationCopy">Complete the job application, work-style section and the role-specific assessment.</small></span><span class="arrow">→</span>
+            </button>
+          </div>
+          <p class="privacy-line">Secure shared submission · Private administrator review · Live Danco workflow</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="setup-screen" aria-labelledby="setup-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="setup-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="setup-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+          <div class="speech-card">
+            <span class="eyebrow" data-i18n="helperLabel">YOUR DANCO TEAM HELPER</span>
+            <p data-i18n="setupHelper">I’ll guide you through each step. You can take your time setting up before the timed questions begin.</p>
+          </div>
+        </aside>
+        <div class="panel form-panel">
+          <span class="step-label" data-i18n="stepOne">STEP 1 OF 3 · SETUP</span>
+          <h2 id="setup-title" data-i18n="setupTitle">Let’s get you ready</h2>
+          <p class="lead small" data-i18n="setupLead">Enter your full name exactly as it appears on your application.</p>
+          <div class="field-grid">
+            <label class="field"><span data-i18n="nameLabel">Full name</span><input id="candidate-name" autocomplete="name" maxlength="80" placeholder="Your full name"></label>
+          </div>
+          <section class="application-fields" id="application-fields" hidden aria-labelledby="application-fields-title">
+            <div class="application-section-heading">
+              <div><span class="eyebrow" data-i18n="applicationEyebrow">JOB APPLICATION</span><h3 id="application-fields-title" data-i18n="applicationDetailsTitle">Your application details</h3></div>
+              <span class="prototype-optional" data-i18n="prototypeOptional">Optional during prototype testing</span>
+            </div>
+            <div class="application-field-grid">
+              <label class="field"><span data-i18n="emailLabel">Email address</span><input id="candidate-email" type="email" autocomplete="email" maxlength="120" placeholder="name@example.com"></label>
+              <label class="field"><span data-i18n="phoneLabel">Phone number</span><input id="candidate-phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Phone number"></label>
+              <label class="field field-span-two"><span>Street address</span><input id="candidate-address" autocomplete="street-address" maxlength="160" placeholder="Street address"></label>
+              <label class="field"><span>City</span><input id="candidate-city" autocomplete="address-level2" maxlength="80" placeholder="City"></label>
+              <label class="field"><span>State</span><input id="candidate-state" autocomplete="address-level1" maxlength="40" placeholder="State"></label>
+              <label class="field"><span>ZIP code</span><input id="candidate-zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" placeholder="ZIP code"></label>
+              <label class="field"><span>Date of birth</span><input id="candidate-dob" type="date" autocomplete="bday"></label>
+              <label class="field ssn-field"><span>Social Security number</span><input id="candidate-ssn" type="text" autocomplete="off" autocapitalize="characters" maxlength="11" placeholder="XXX-XX-XXXX"><small id="ssn-status" class="field-status">Format check only. Prototype testers may enter PROTOTYPE.</small></label>
+              <label class="field"><span data-i18n="availabilityLabel">Available start date</span><input id="candidate-availability" type="date"></label>
+              <label class="field"><span data-i18n="desiredRoleLabel">Position applied for</span><select id="candidate-role"><option value="" data-i18n="chooseRole">Choose a role</option><option value="Service Helper">Service Helper</option><option value="Roofer">Roofer</option><option value="Foreman">Foreman</option><option value="Commercial Account Manager">Commercial Account Manager</option></select></label>
+              <label class="field"><span id="candidate-experience-label" data-i18n="experienceLabel">Commercial roofing experience</span><select id="candidate-experience"><option value="" data-i18n="chooseExperience">Choose experience</option><option value="None">None</option><option value="Under 1 year">Under 1 year</option><option value="1–3 years">1–3 years</option><option value="3–5 years">3–5 years</option><option value="5+ years">5+ years</option></select></label>
+              <label class="field"><span data-i18n="workAuthorizationLabel">Authorized to work in the United States?</span><select id="candidate-authorization"><option value="" data-i18n="chooseAnswer">Choose an answer</option><option value="Yes">Yes</option><option value="No">No</option><option value="Prefer to discuss">Prefer to discuss</option></select></label>
+              <label class="field"><span data-i18n="licenseLabel">Valid driver’s license?</span><select id="candidate-license"><option value="" data-i18n="chooseAnswer">Choose an answer</option><option value="Yes">Yes</option><option value="No">No</option><option value="Prefer to discuss">Prefer to discuss</option></select></label>
+            </div>
+            <fieldset class="other-role-fieldset"><legend data-i18n="otherRolesLegend">Would you consider another listed role if it better matches your assessment?</legend><label><input type="radio" name="other-roles" value="Yes" checked><span data-i18n="otherRolesYes">Yes, I’m open to other roles</span></label><label><input type="radio" name="other-roles" value="No"><span data-i18n="otherRolesNo">No, only the role selected above</span></label></fieldset>
+            <fieldset class="background-consent-fieldset"><legend data-i18n="backgroundConsentLegend">If your application progresses, do you consent to Danco requesting an employment background screening?</legend><div class="consent-choice-row"><label><input type="radio" name="background-consent" value="Yes"><span data-i18n="backgroundConsentYes">Yes, I consent to a background screening if my application progresses</span></label><label><input type="radio" name="background-consent" value="No"><span data-i18n="backgroundConsentNo">No, I do not consent</span></label></div><div id="background-consent-reason-wrap" hidden><label class="field"><span data-i18n="backgroundReasonLabel">Please provide a reason</span><textarea id="background-consent-reason" maxlength="600" data-i18n-placeholder="backgroundReasonPlaceholder" placeholder="Briefly explain your answer"></textarea></label></div><p class="fine" data-i18n="backgroundConsentNote">Prototype acknowledgement only. A live screening provider would present its own formal disclosure and authorization before any check is run.</p></fieldset>
+            <label class="candidate-privacy-ack" id="candidate-privacy-ack-wrap"><input id="candidate-privacy-ack" type="checkbox"><span><b>Personal information acknowledgement</b><small>I understand that the personal information I choose to provide is for Danco's recruitment and related employment administration only. It will not be used for unrelated purposes, and any retention should follow Danco's approved recruitment and privacy procedures.</small></span></label>
+          </section>
+          <fieldset class="option-fieldset">
+            <legend data-i18n="audioTitle">Would audio support help?</legend>
+            <button class="setup-choice selected" type="button" data-audio="off"><span class="choice-dot"></span><span><b data-i18n="audioOffTitle">Continue without audio</b><small data-i18n="audioOffCopy">You can turn audio on later from the top bar.</small></span></button>
+            <button class="setup-choice" type="button" data-audio="on"><span class="choice-dot"></span><span><b data-i18n="audioOnTitle">Use audio support</b><small data-i18n="audioOnCopy">Questions and guidance can be read aloud in your chosen language.</small></span></button>
+          </fieldset>
+          <fieldset class="support-reason-fieldset" id="support-reason-fieldset" hidden>
+            <legend data-i18n="audioReasonTitle">What would the audio support help with?</legend>
+            <p data-i18n="audioReasonLead">This helps us apply the right support and record it accurately for the hiring team.</p>
+            <div class="support-reason-grid">
+              <button class="support-reason-choice" type="button" data-support-reason="2" aria-pressed="false"><span aria-hidden="true">Aa</span><span><b data-i18n="readingSupportTitle">Reading support</b><small data-i18n="readingSupportCopy">Reading written questions is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="3" aria-pressed="false"><span aria-hidden="true">◉</span><span><b data-i18n="sightSupportTitle">Sight support</b><small data-i18n="sightSupportCopy">Seeing written content clearly is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="1" aria-pressed="false"><span aria-hidden="true">♪</span><span><b data-i18n="audioPreferenceTitle">Spoken-guidance preference</b><small data-i18n="audioPreferenceCopy">I prefer to hear the questions read aloud.</small></span></button>
+            </div>
+          </fieldset>
+          <div class="access-card" id="setup-access-card"></div>
+          <p class="form-error" id="setup-error" role="alert"></p>
+          <button class="button button-primary button-wide" id="begin-beginner" type="button" data-i18n="beginAssessment">Begin assessment</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="profile-intro-screen" aria-labelledby="profile-intro-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel compact-guide">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="profile-intro-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="profile-intro-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+        </aside>
+        <div class="panel intro-panel">
+          <span class="step-label" data-i18n="stepTwo">STEP 2 OF 3 · GETTING TO KNOW YOU</span>
+          <h2 id="profile-intro-title" data-i18n="profileIntroTitle">Before we get into the assessment…</h2>
+          <p class="lead small" data-i18n="profileIntroOne">We’re happy that you’re looking to join the Danco Roofing team. We focus on working together and helping our workforce feel comfortable when interacting with one another.</p>
+          <p data-i18n="profileIntroTwo">We’d like to take a moment to get to know how you prefer to work. The next five friendly questions have no timer, and there are no right or wrong answers.</p>
+          <div class="notice-card"><span>ⓘ</span><p data-i18n="profilePrivacy">This optional section is used only as a gentle workplace-engagement guide for the hiring team. Your estimated result will not be shown on your applicant result screen.</p></div>
+          <div class="button-row">
+            <button class="button button-primary" id="start-profile" type="button" data-i18n="startFive">Answer 5 quick questions</button>
+            <button class="button button-secondary" id="skip-profile" type="button" data-i18n="skipProfile">Skip this section</button>
+          </div>
+          <p class="fine" data-i18n="skipRecorded">If you skip, the assessment report will simply note “not completed”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="profile-screen" aria-labelledby="profile-question">
+      <div class="content-shell narrow-shell">
+        <div class="inline-helper-duo" data-helper-duo>
+          <span class="helper-portrait"><img src="danco-helper-english.png" alt="English Danco helper"></span>
+          <div><b data-i18n="helpersWithYou">Your Danco team helpers are with you</b><small data-i18n="profileUntimedReminder">Take your time—this section is not timed.</small></div>
+          <span class="helper-portrait"><img src="danco-helper-spanish.png" alt="Spanish Danco helper"></span>
+        </div>
+        <div class="panel question-panel untimed-panel">
+          <div class="question-topline"><span class="step-label" id="profile-counter">Question 1 of 5</span><span class="untimed-pill" data-i18n="noTimer">NO TIMER</span></div>
+          <div class="progress-track"><span id="profile-progress"></span></div>
+          <h2 id="profile-question"></h2>
+          <p class="question-hint" data-i18n="profileHint">Choose the answer that feels most natural to you.</p>
+          <div class="profile-options" id="profile-options"></div>
+          <div class="answer-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="profile-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="instructions-screen" aria-labelledby="instructions-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel compact-guide">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="instructions-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="instructions-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+        </aside>
+        <div class="panel intro-panel">
+          <span class="step-label" data-i18n="stepThree">STEP 3 OF 3 · TRADE ASSESSMENT</span>
+          <h2 id="instructions-title" data-i18n="instructionsTitle">Ten focused questions</h2>
+          <p class="lead small" data-i18n="instructionsLead">The assessment checks practical roofing knowledge, safe decision-making and role readiness.</p>
+          <div class="feature-grid">
+            <article><span>10</span><b data-i18n="featureQuestions">Questions</b><small data-i18n="featureQuestionsCopy">Seven include visual answer choices</small></article>
+            <article><span>⏱</span><b data-i18n="featureTiming">45 seconds per question</b><small data-i18n="featureTimingCopy">Question and answers are available immediately</small></article>
+            <article><span>1</span><b data-i18n="featureChoice">One answer</b><small data-i18n="featureChoiceCopy">Choose the single best response</small></article>
+            <article><span>✓</span><b data-i18n="featureResult">Private result</b><small data-i18n="featureResultCopy">You receive a result code, not a score</small></article>
+          </div>
+          <div class="notice-card"><span>!</span><p data-i18n="timingNotice">Standard mode gives 45 seconds for each question with answer choices available immediately. If time expires, a selected answer is recorded; otherwise the question is recorded as not answered.</p></div>
+          <div class="notice-card accessibility-notice" id="accessibility-notice" hidden><span>+</span><p><b data-i18n="supportActiveTitle">Accessibility support is active.</b> <span data-i18n="supportActiveCopy">The question can be heard and repeated without a timer. Press Reveal answers when ready; the 60-second answer timer starts only then.</span></p></div>
+          <button class="button button-primary button-wide" id="start-knowledge" type="button" data-i18n="startQuestions">Start the 10 questions</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="knowledge-screen" aria-labelledby="knowledge-question">
+      <div class="assessment-shell">
+        <div class="inline-helper-duo assessment-helper-duo" data-helper-duo>
+          <span class="helper-portrait"><img src="danco-helper-english.png" alt="English Danco helper"></span>
+          <div><b data-i18n="helpersWithYou">Your Danco team helpers are with you</b><small data-i18n="timedReminder">Your selected-language helper has the visual focus.</small></div>
+          <span class="helper-portrait"><img src="danco-helper-spanish.png" alt="Spanish Danco helper"></span>
+        </div>
+        <div class="assessment-topbar">
+          <div><span id="knowledge-counter">Question 1 of 10</span><small id="knowledge-tier">Foundation</small></div>
+          <div class="phase-display"><span id="phase-label">REVIEW</span><b id="timer-display">08</b></div>
+        </div>
+        <div class="progress-track knowledge-progress"><span id="knowledge-progress"></span></div>
+        <div class="question-stage" id="question-stage">
+          <p class="question-category" id="knowledge-category">Roof products</p>
+          <h2 id="knowledge-question"></h2>
+          <p class="question-hint" id="knowledge-hint"></p>
+          <div class="accessibility-question-actions"><button class="button button-secondary question-repeat" id="knowledge-repeat" type="button" hidden><span aria-hidden="true">↻</span><span data-i18n="repeatQuestion">Repeat question</span></button><button class="button button-gold" id="knowledge-reveal" type="button" hidden>Reveal answers &amp; start 60 seconds</button></div>
+          <div class="knowledge-options" id="knowledge-options"></div>
+          <div class="answer-confirm-bar timed-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="knowledge-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="result-screen" aria-labelledby="result-title">
+      <div class="result-shell">
+        <img class="result-helper left" id="result-helper-english" src="danco-helper-english.png" alt="Danco team helper">
+        <div class="result-card panel">
+          <div class="success-mark">✓</div>
+          <span class="eyebrow" data-i18n="completeEyebrow">ASSESSMENT COMPLETE</span>
+          <h2 id="result-title" data-i18n="completeTitle">Thank you for taking part</h2>
+          <p class="lead small" data-i18n="completeLead">Your responses have been converted into the result code below.</p>
+          <div class="application-result-summary" id="application-result-summary" hidden aria-label="Application choices"></div>
+          <span class="result-code-label" id="result-code-label" data-i18n="resultCodeLabel">Result code</span>
+          <div class="result-code" id="result-code">DRA-••••-••••-••••</div>
+          <button class="button button-secondary" id="copy-code" type="button" data-i18n="copyCode">Copy result code</button>
+          <div class="notice-card result-notice"><span>→</span><p data-i18n="resultInstruction">Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.</p></div>
+          <div class="completion-meta" id="completion-meta"></div>
+          <button class="button button-gold application-submit-button" id="submit-application" type="button" hidden data-i18n="submitApplication">Submit application for review</button>
+          <p class="fine application-submit-note" id="application-submit-note" hidden data-i18n="submitApplicationNote">Completed applications and workforce assessments can be submitted directly to Danco’s protected shared review list.</p>
+          <button class="button button-primary" id="next-applicant" type="button" data-i18n="nextApplicant">Start next applicant</button>
+        </div>
+        <img class="result-helper right" id="result-helper-spanish" src="danco-helper-spanish.png" alt="Danco team helper">
+      </div>
+    </section>
+  </main>
+
+  <button class="help-tab" id="help-tab" type="button" aria-label="Open help"><span>?</span><b data-i18n="help">Help</b></button>
+
+  <div class="drawer-backdrop" id="help-backdrop"></div>
+  <aside class="help-drawer" id="help-drawer" aria-hidden="true" aria-labelledby="help-title">
+    <button class="drawer-close" type="button" data-action="close-help" aria-label="Close help">×</button>
+    <div class="drawer-helper-duo" aria-hidden="true">
+      <img class="drawer-primary" id="help-helper" src="danco-helper-english.png" alt="Danco team helper">
+      <img class="drawer-secondary" id="help-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco team helper">
+    </div>
+    <span class="eyebrow" data-i18n="helperLabel">YOUR DANCO TEAM HELPER</span>
+    <h2 id="help-title" data-i18n="helpTitle">Need a hand?</h2>
+    <p id="help-copy" data-i18n="helpDefault">Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.</p>
+    <div class="help-audio-action">
+      <button class="button button-secondary button-wide" type="button" data-action="repeat-audio"><span aria-hidden="true">↻</span><span data-i18n="repeatAudio">Repeat spoken audio</span></button>
+      <small data-i18n="repeatAudioHint">Hear the current instruction or question again.</small>
+      <div class="voice-setup" id="narration-voice-setup">
+        <span class="voice-label" data-i18n="voiceLabel">Narration voice</span>
+        <div class="voice-mode-toggle" role="group" aria-label="Narration voice">
+          <button type="button" class="active" data-voice-mode="recorded">Danco recorded</button>
+          <button type="button" data-voice-mode="device">Device reader</button>
+        </div>
+        <div class="standard-voice-badge"><span aria-hidden="true">✓</span><div><b id="selected-voice-title" data-i18n="standardVoiceTitle">Danco recorded voice</b><small id="selected-voice-copy" data-i18n="standardVoiceCopy">Uses the optimized Danco narration pack whenever an exact recorded line is available.</small></div></div>
+        <button class="button voice-test-button" type="button" data-action="test-narration"><span aria-hidden="true">▶</span><span data-i18n="testVoice">Test selected voice</span></button>
+      </div>
+    </div>
+    <button class="button button-primary button-wide help-confirm" type="button" data-action="close-help" data-i18n="gotIt">Got it</button>
+  </aside>
+
+  <div class="modal-backdrop" id="unlock-modal" role="dialog" aria-modal="true" aria-labelledby="unlock-title">
+    <div class="modal-card small-modal">
+      <button class="modal-close" type="button" data-action="close-unlock" aria-label="Close">×</button>
+      <div class="modal-icon">🔐</div>
+      <span class="eyebrow">PROTOTYPE ACCESS</span>
+      <h2 id="unlock-title" data-i18n="unlockTitle">Unlock the assessment trial</h2>
+      <p data-i18n="unlockCopy">Enter the private access code supplied by Danco. A valid trial code activates up to three completed assessments on this browser or device.</p>
+      <div class="instruction-strip"><b>1</b><span data-i18n="unlockStepOne">Enter the supplied code below.</span><b>2</b><span data-i18n="unlockStepTwo">Select “Activate trial”.</span><b>3</b><span data-i18n="unlockStepThree">Return to setup and begin the assessment.</span></div>
+      <label class="field"><span data-i18n="accessCodeLabel">Private access code</span><input id="unlock-code" autocomplete="off" autocapitalize="characters" placeholder="Enter code"></label>
+      <p class="form-error" id="unlock-error" role="alert"></p>
+      <button class="button button-primary button-wide" id="unlock-submit" type="button" data-i18n="activateTrial">Activate trial</button>
+      <p class="fine" data-i18n="unlockPrivacy">Codes are never displayed by the app. Re-entering the same code does not restore used trial runs.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <div class="modal-card admin-modal-card">
+      <button class="modal-close" type="button" data-action="close-admin" aria-label="Close">×</button>
+      <section id="admin-login">
+        <span class="eyebrow">DANCO ADMINISTRATOR</span>
+        <h2 id="admin-title">Results dashboard</h2>
+        <p>Enter the administrator PIN to view shared applications and assessment-only results from any device.</p>
+        <label class="field"><span>Administrator PIN</span><input id="admin-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="••••"></label>
+        <p class="form-error" id="admin-error" role="alert"></p>
+        <button class="button button-primary button-wide" id="admin-login-button" type="button">Open dashboard</button>
+      </section>
+      <section id="admin-dashboard" class="admin-dashboard" hidden>
+        <div class="print-report-header">
+          <div class="print-brand"><img src="danco-logo-white.png" alt="Danco Roofing Services, Inc."><span><b>Danco Workforce &amp; Applicant Report</b><small>Private hiring view</small></span></div>
+          <div class="print-date" id="print-date"></div>
+        </div>
+        <div class="dashboard-heading"><div><span class="eyebrow">PRIVATE DANCO VIEW</span><h2>Workforce assessment &amp; applicant breakdown</h2></div><span class="dashboard-status">ADMIN</span></div>
+        <section class="danco-plus-access-card" id="danco-plus-access-card">
+          <div class="danco-plus-mark"><b>Danco+</b><span id="danco-plus-access-state">STANDARD</span></div>
+          <div class="danco-plus-access-copy"><span class="eyebrow">OPTIONAL ADVANCED HIRING WORKFLOW</span><h3 id="danco-plus-access-title">Advanced tools are visible in Standard mode</h3><p id="danco-plus-access-copy">Explore the standard assessment and application workflow normally. Danco+ can be requested on this device when you are ready to demonstrate integrated screening, offer creation and secure employment-file progression.</p></div>
+          <div class="danco-plus-access-actions"><button class="button button-secondary" type="button" data-action="open-danco-plus-pitch">Why Danco+?</button><button class="button button-gold" id="request-danco-plus" type="button">Request Danco+ trial</button></div>
+        </section>
+        <section class="owner-danco-plus-panel" id="owner-danco-plus-panel" hidden>
+          <div class="owner-panel-heading"><div><span class="eyebrow">OWNER ONLY · DANCO+ CONTROL</span><h3>Advanced trial approvals</h3><p>Approve requesting devices and switch this presentation device between Standard and Danco+ without re-entering the owner code.</p></div><span class="owner-badge">OWNER</span></div>
+          <div class="owner-presentation-toggle"><span>Presentation mode</span><div class="mode-toggle" role="group" aria-label="Owner presentation mode"><button type="button" data-owner-product-mode="standard">Standard</button><button type="button" data-owner-product-mode="advanced">Danco+</button></div></div>
+          <div class="owner-provider-lock"><b>Live screening-provider connection</b><span>Production owner setup only. Vendor credentials and real provider configuration are intentionally unavailable in trial mode.</span></div>
+          <div class="owner-request-toolbar"><b>Advanced trial requests</b><button class="button button-secondary" id="refresh-danco-plus-requests" type="button">Refresh requests</button></div>
+          <div class="owner-request-list" id="owner-request-list"><p class="fine">Owner approval service will load here.</p></div>
+          <section class="owner-invite-builder" id="owner-invite-builder">
+            <div class="owner-request-toolbar"><div><b>Create genuine candidate link</b><span>Creates a one-use application and role-assessment link with Standard Danco presentation and no prototype messaging.</span></div></div>
+            <div class="owner-invite-grid"><label class="field"><span>Candidate name (optional)</span><input id="owner-invite-name" maxlength="120" placeholder="Optional welcome name"></label><label class="field"><span>Role</span><select id="owner-invite-role"><option value="Commercial Account Manager">Commercial Account Manager</option><option value="Service Helper">Service Helper</option><option value="Roofer">Roofer</option><option value="Foreman">Foreman</option></select></label></div>
+            <button class="button button-gold" id="create-candidate-link" type="button">Create one-use candidate link</button>
+            <div class="owner-invite-output" id="owner-invite-output" hidden><span>Candidate link</span><div><input id="owner-invite-link" readonly><button class="button button-secondary" id="copy-candidate-link" type="button">Copy link</button></div><small>The link becomes assessment-locked when the timed questions begin. After completion it opens only the result screen and can be submitted once.</small></div>
+            <p class="form-error" id="owner-invite-error" role="alert"></p>
+          </section>
+          <button class="button button-secondary owner-verify-button" id="verify-owner-session" type="button" hidden>Verify owner approval session</button>
+          <p class="form-error" id="owner-plus-error" role="alert"></p>
+        </section>
+        <section class="admin-mode-card" aria-labelledby="admin-mode-title">
+          <div><span class="eyebrow">DEVICE START MODE</span><h3 id="admin-mode-title">Lock this device to a route</h3><p>Choose whether this browser/device offers the workforce assessment only, the job application only, or lets the user choose after selecting a language.</p></div>
+          <div class="mode-toggle mode-toggle-three" role="group" aria-label="Device start mode"><button type="button" data-admin-device-mode="assessment">Workforce assessment only</button><button type="button" data-admin-device-mode="application">Application only</button><button type="button" data-admin-device-mode="choice">Choice of either</button></div>
+        </section>
+        <section class="sales-leaderboard-card" aria-labelledby="sales-leaderboard-title">
+          <div class="sales-leaderboard-hero">
+            <div class="sales-leaderboard-hero-copy"><span class="eyebrow">SALES ROLE · LIVE LEAGUE TABLE</span><h3 id="sales-leaderboard-title">Commercial Account Manager leaderboard</h3><p>Completed Commercial Account Manager reports appear here automatically unless archived, marked not eligible, or manually removed from the league table. Rank by overall suitability or any core sales attribute.</p><div class="leaderboard-chip-row"><span class="leaderboard-chip" id="sales-leaderboard-count">0 sales candidates</span><span class="leaderboard-chip">Click Overall, Experience, Network, Development, Consultative or Commercial to re-rank</span></div></div>
+            <div class="sales-leaderboard-winner-panel">
+              <div class="leaderboard-illustration-card"><img src="leaderboard-hero-rendered.png" alt="Illustration of a new employee being welcomed to Danco from behind"></div>
+              <div class="leaderboard-winner-copy"><small>CURRENT LEADER</small><h4 id="leaderboard-winner-name">Waiting for sales submissions</h4><span id="leaderboard-winner-role">Commercial Account Manager leaderboard</span><b id="leaderboard-winner-score">No ranked submissions yet</b><p id="leaderboard-winner-copy">Sales submissions will appear here after applicants complete the Commercial Account Manager route.</p></div>
+            </div>
+          </div>
+          <div id="sales-leaderboard-wrap" class="sales-leaderboard-wrap"><div class="leaderboard-empty"><b>No sales suitability submissions yet.</b><span>Completed Commercial Account Manager applications and assessment-only results will build this league table automatically.</span></div></div>
+          <div class="leaderboard-removed" id="sales-leaderboard-removed" hidden><div><b>Removed from league table</b><span>These reports stay in their normal filing location and can be restored here at any time.</span></div><div id="sales-leaderboard-removed-list"></div></div>
+        </section>
+
+        <section class="stored-applications-card" aria-labelledby="stored-applications-title">
+          <div><span class="eyebrow">SHARED SUBMISSION DATABASE</span><h3 id="stored-applications-title">Applications and assessment results</h3><p id="shared-service-status">Submitted records are shared across authorized phones, tablets and computers.</p></div>
+          <div class="shared-submission-browser">
+            <div class="submission-queue-tabs" role="tablist" aria-label="Submission status">
+              <button class="active" type="button" data-queue-status="pending">Yet to process <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="actioned">Actioned <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="archived">Archived <span data-queue-count>0</span></button>
+              <button type="button" class="advanced-queue-tab" data-advanced-feature="queue" data-queue-status="background_to_action">CB checked · To action <span data-queue-count>0</span></button>
+              <button type="button" class="advanced-queue-tab" data-advanced-feature="queue" data-queue-status="background_eligible">CB checked · Eligible <span data-queue-count>0</span></button>
+              <button type="button" class="advanced-queue-tab" data-advanced-feature="queue" data-queue-status="background_not_eligible">CB checked · Not eligible <span data-queue-count>0</span></button>
+              <button type="button" class="advanced-queue-tab" data-advanced-feature="queue" data-queue-status="employment_contracts">Employment contracts <span data-queue-count>0</span></button>
+              <button type="button" class="advanced-queue-tab" data-advanced-feature="queue" data-queue-status="signed_employment_contracts">Signed employment contracts <span data-queue-count>0</span></button>
+            </div>
+            <div class="stored-applicant-controls"><label class="field"><span>Select applicant or assessment</span><select id="stored-applicant-select"><option value="">Open the dashboard to load submissions</option></select></label><button class="button button-secondary" id="load-stored-applicant" type="button">Open full result</button></div>
+          </div>
+        </section>
+        <p class="form-error" id="decode-error" role="alert"></p>
+
+        <div id="dashboard-output" class="dashboard-output"></div>
+        <section class="report-leaderboard-control" id="report-leaderboard-control" hidden><div><span class="eyebrow">SALES LEAGUE TABLE</span><h3>League table visibility</h3><p id="report-leaderboard-copy">This completed sales report is included in the leaderboard.</p></div><button class="button button-secondary" id="report-leaderboard-toggle" type="button">Remove from league table</button></section>
+        <section class="background-screening-actions danco-plus-feature-card" id="background-screening-actions" data-advanced-feature="background" hidden><div><span class="eyebrow">ADVANCED PROTOTYPE · BACKGROUND SCREENING</span><h3>Progress a promising candidate</h3><p id="background-action-copy"></p></div><button class="button button-gold" id="request-background-check" type="button">Request background check</button><div class="background-decision-actions" id="background-decision-actions" hidden><span>After review, file the candidate as:</span><button class="button button-secondary" type="button" data-background-decision="further_review">CB checked · To action</button><button class="button button-secondary" type="button" data-background-decision="eligible">CB checked · Eligible</button><button class="button button-secondary" type="button" data-background-decision="not_eligible">CB checked · Not eligible</button><small>These are manual prototype workflow states. The screening result does not automatically make an employment decision.</small></div></section>
+        <section class="employment-contract-actions danco-plus-feature-card" id="employment-contract-actions" data-advanced-feature="contract" hidden>
+          <div><span class="eyebrow">ADVANCED PROTOTYPE · EMPLOYMENT CONTRACT</span><h3>Progress an eligible candidate to offer documentation</h3><p id="employment-contract-copy">Create a pre-filled Danco employment contract from the stored applicant record.</p></div>
+          <div class="contract-action-buttons"><button class="button button-gold" id="create-employment-contract" type="button">Create employment contract</button><button class="button button-secondary" id="view-employment-contract" type="button" hidden>View employment contract</button></div>
+        </section>
+        <section class="signed-contract-actions danco-plus-feature-card" id="signed-contract-actions" data-advanced-feature="filing" hidden>
+          <div><span class="eyebrow">UPLOAD-ONLY FILE STORE</span><h3>Signed employment contracts</h3><p>Upload the scanned, signed contract. Records enter this folder only after a signed file is uploaded; nothing can be moved here from another queue.</p></div>
+          <div class="signed-upload-controls" id="signed-upload-controls"><label class="field"><span>Signed contract file</span><input id="signed-contract-file" type="file" accept="application/pdf,image/jpeg,image/png"></label><label class="field"><span>Uploaded by</span><input id="signed-contract-uploaded-by" maxlength="120" placeholder="Administrator name"></label><button class="button button-primary" id="upload-signed-contract" type="button">Upload signed contract</button></div>
+          <button class="button button-secondary" id="open-signed-contract" type="button" hidden>Open signed contract</button><p class="form-error" id="signed-contract-error" role="alert"></p>
+        </section>
+        <section class="background-report-store danco-plus-feature-card" id="background-report-store" data-advanced-feature="filing">
+          <div class="background-report-store-heading"><div class="file-folder-icon" aria-hidden="true">▰</div><div><span class="eyebrow">PRIVATE SCREENING FILE STORE</span><h3>Background Check Reports</h3><p id="background-report-store-status">Completed Danco+ screening demonstrations are filed here against the matching application reference. The applicant report shows status only; open this folder to view the fuller demonstration report.</p></div></div>
+          <div class="stored-applicant-controls"><label class="field"><span>Stored background-check report</span><select id="background-report-select"><option value="">Open the dashboard to load reports</option></select></label><button class="button button-secondary" id="open-background-report" type="button">Open full background report</button></div>
+        </section>
+        <div class="submission-status-actions" id="submission-status-actions" hidden>
+          <span>Move this shared record to:</span>
+          <button class="button button-secondary" type="button" data-set-submission-status="pending">Yet to process</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="actioned">Actioned</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="archived">Archived</button>
+        </div>
+        <div class="admin-actions">
+          <button class="button button-secondary" id="load-example" type="button">Load example report</button>
+          <button class="button button-secondary" id="print-report" type="button">Print / save PDF</button>
+          <button class="button button-danger" id="reset-device" type="button">Reset applicant on this device</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="submit-modal" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+    <div class="modal-card small-modal">
+      <button class="modal-close" type="button" data-action="close-submit" aria-label="Close">×</button>
+      <div class="modal-icon">✓</div>
+      <span class="eyebrow">SECURE SHARED SUBMISSION</span>
+      <h2 id="submit-title" data-i18n="submitTitle">Submit to Danco for review?</h2>
+      <p data-i18n="submitCopy">This completed record will be added to Danco's protected shared review list. No administrator code is required from the applicant.</p>
+      <p class="form-error" id="submit-error" role="alert"></p>
+      <button class="button button-primary button-wide" id="confirm-submit" type="button" data-i18n="confirmSubmit">Submit securely</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="ssn-warning-modal" role="dialog" aria-modal="true" aria-labelledby="ssn-warning-title">
+    <div class="modal-card small-modal ssn-warning-card">
+      <button class="modal-close" type="button" data-action="close-ssn-warning" aria-label="Close">×</button>
+      <div class="modal-icon warning-icon">!</div>
+      <span class="eyebrow">SOCIAL SECURITY NUMBER</span>
+      <h2 id="ssn-warning-title">No valid Social Security number has been provided</h2>
+      <p id="ssn-warning-copy">The number entered does not pass the app's structural SSN check. Do you want to proceed with the application without providing a valid Social Security number?</p>
+      <div id="ssn-warning-choice-actions" class="ssn-warning-actions">
+        <button class="button button-secondary" id="ssn-go-back" type="button">Go back and correct it</button>
+        <button class="button button-danger" id="ssn-proceed-without" type="button">Yes, proceed without a valid SSN</button>
+      </div>
+      <div id="ssn-reason-panel" hidden>
+        <label class="field"><span>Reason for proceeding without a valid SSN</span><select id="ssn-missing-reason"><option value="">Choose a reason</option><option value="Applicant does not have an SSN">Applicant does not have an SSN</option><option value="Applicant does not know the SSN">Applicant does not know the SSN</option><option value="Applicant does not have the number available">Applicant does not have the number available</option><option value="Applicant prefers not to provide it at this stage">Applicant prefers not to provide it at this stage</option><option value="Other">Other</option></select></label>
+        <label class="field" id="ssn-other-reason-wrap" hidden><span>Other reason</span><textarea id="ssn-missing-reason-other" maxlength="600" placeholder="Enter reason"></textarea></label>
+        <p class="notice-text">Danco background screening cannot be requested from this prototype unless a structurally valid SSN or the PROTOTYPE bypass is recorded.</p>
+        <p class="form-error" id="ssn-warning-error" role="alert"></p>
+        <button class="button button-primary button-wide" id="ssn-confirm-proceed" type="button">Continue application</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="danco-plus-request-modal" role="dialog" aria-modal="true" aria-labelledby="danco-plus-request-title">
+    <div class="modal-card danco-plus-request-modal-card">
+      <button class="modal-close" type="button" data-action="close-danco-plus-request" aria-label="Close">×</button>
+      <div class="danco-plus-modal-mark">Danco+</div><span class="eyebrow">ADVANCED TRIAL REQUEST</span><h2 id="danco-plus-request-title">Request Danco+ on this device</h2>
+      <p class="lead small">Danco+ extends the standard assessment into a connected hiring workflow designed to reduce handoffs and administrative delay.</p>
+      <div class="danco-plus-feature-list"><div><b>Integrated background screening</b><span>Admin-led cost approval and screening workflow demonstration.</span></div><div><b>Offer &amp; employment agreement builder</b><span>Pre-fill candidate details and generate consistent offer documentation.</span></div><div><b>Secure employment file progression</b><span>Move approved candidates through contract and signed-document filing in one controlled record.</span></div></div>
+      <label class="field"><span>Requesting name</span><input id="danco-plus-request-name" maxlength="120" placeholder="Your name"></label><p class="fine">Your name is pre-filled from the current assessment or applicant record when available and can be changed for prototype testing.</p>
+      <p class="form-error" id="danco-plus-request-error" role="alert"></p><button class="button button-gold button-wide" id="submit-danco-plus-request" type="button">Send request to owner</button>
+      <div class="danco-plus-request-status" id="danco-plus-request-status" hidden></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="danco-plus-welcome-modal" role="dialog" aria-modal="true" aria-labelledby="danco-plus-welcome-title">
+    <div class="modal-card danco-plus-welcome-card">
+      <div class="danco-plus-glow-mark">Danco+</div><span class="eyebrow">ADVANCED MODE APPROVED</span><h2 id="danco-plus-welcome-title">Welcome to Danco+</h2>
+      <p class="danco-plus-tagline">Hire with confidence. Move at Danco speed.</p>
+      <p class="lead small">This advanced prototype connects assessment insight, screening readiness, offer creation and secure employment-file handling into one guided workflow. It is designed to turn disconnected hiring handoffs that can take days into controlled actions that can take minutes — while keeping decisions, third-party costs and approvals in Danco's hands.</p>
+      <div class="danco-plus-welcome-grid"><div><b>Screen</b><span>Progress promising applicants into a controlled background-screening demonstration.</span></div><div><b>Offer</b><span>Create a Danco-styled, pre-filled employment agreement from the applicant record.</span></div><div><b>File</b><span>Keep created and signed employment documents organized with the candidate workflow.</span></div></div>
+      <div class="danco-plus-welcome-actions"><button class="button button-secondary" type="button" data-action="open-danco-plus-pitch">▶ Watch the Danco+ story</button><button class="button button-gold" id="enter-danco-plus" type="button">Enter Danco+</button></div>
+      <p class="fine">Prototype only. Real screening-provider services, pricing, turnaround and legal compliance remain independent third-party responsibilities.</p>
+    </div>
+  </div>
+
+
+  <div class="modal-backdrop" id="danco-plus-pitch-prompt-modal" role="dialog" aria-modal="true" aria-labelledby="danco-plus-pitch-prompt-title">
+    <div class="modal-card danco-plus-pitch-prompt-card">
+      <div class="pitch-prompt-characters" aria-hidden="true">
+        <img src="danco-helper-english.png" alt="">
+        <img src="danco-helper-spanish.png" alt="">
+      </div>
+      <div class="pitch-prompt-copy">
+        <div class="danco-plus-modal-mark">Danco+</div>
+        <span class="eyebrow">SHORT BUSINESS OVERVIEW</span>
+        <h2 id="danco-plus-pitch-prompt-title">See what happens when hiring becomes one Danco process.</h2>
+        <p class="lead small">Dan and Brenda can show you the bigger picture in about a minute: stronger candidate insight, fewer handoffs, screening and offer workflow, and a clean handoff to payroll.</p>
+        <div class="pitch-prompt-actions"><button class="button button-gold" id="play-danco-plus-pitch" type="button">▶ Play the pitch</button><button class="button button-secondary" id="skip-danco-plus-pitch" type="button">Skip for now</button></div>
+        <p class="fine">Internal prototype presentation · American English. The pitch can be replayed at any time from “Why Danco+?”.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop danco-plus-pitch-backdrop" id="danco-plus-pitch-modal" role="dialog" aria-modal="true" aria-labelledby="danco-plus-pitch-title">
+    <div class="danco-plus-pitch-stage" id="danco-plus-pitch-stage">
+      <button class="pitch-close" id="close-danco-plus-pitch" type="button" aria-label="Close Danco Plus presentation">×</button>
+      <div class="pitch-brandbar"><div><div class="danco-plus-glow-mark">Danco+</div><span>HIRING, CONNECTED END TO END</span></div><div class="pitch-brandbar-meta"><b id="pitch-scene-count">01 / 10</b><span>Business overview</span></div></div>
+      <div class="pitch-progress"><i id="pitch-progress-bar"></i></div>
+      <div class="pitch-cinema" id="pitch-cinema">
+        <div class="pitch-ambient" aria-hidden="true"></div>
+        <div class="pitch-character pitch-character-dan" id="pitch-character-dan" aria-hidden="true"><span class="pitch-nameplate">DAN</span><img src="danco-helper-english.png" alt=""></div>
+        <div class="pitch-message-card">
+          <div class="pitch-speaker"><span id="pitch-speaker">DAN</span><small>DANCO TEAM GUIDE</small></div>
+          <h2 id="danco-plus-pitch-title">One connected Danco hiring journey</h2>
+          <p id="pitch-line">Danco+ connects the hiring journey from application to payroll handoff.</p>
+          <div class="pitch-feature-visual" id="pitch-feature-visual" aria-hidden="true"></div>
+        </div>
+        <div class="pitch-character pitch-character-brenda" id="pitch-character-brenda" aria-hidden="true"><span class="pitch-nameplate">BRENDA</span><img src="danco-helper-spanish.png" alt=""></div>
+      </div>
+      <div class="pitch-controlbar">
+        <button class="pitch-control" id="pitch-prev" type="button" aria-label="Previous scene">←</button>
+        <button class="pitch-control pitch-control-primary" id="pitch-play-pause" type="button">Pause</button>
+        <button class="pitch-control" id="pitch-next" type="button" aria-label="Next scene">→</button>
+        <button class="pitch-control pitch-sound" id="pitch-sound" type="button" aria-label="Toggle pitch sound">🔊 Sound</button>
+        <div class="pitch-end-actions" id="pitch-end-actions" hidden><button class="button button-secondary" id="pitch-replay" type="button">Replay</button><button class="button button-gold" id="pitch-primary-cta" type="button">Explore Danco+</button></div>
+      </div>
+      <p class="pitch-disclaimer">Danco+ supports the hiring decision; it does not replace human judgment. Third-party screening turnaround and fees remain provider-dependent.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="owner-verify-modal" role="dialog" aria-modal="true" aria-labelledby="owner-verify-title">
+    <div class="modal-card small-modal"><button class="modal-close" type="button" data-action="close-owner-verify" aria-label="Close">×</button><span class="eyebrow">OWNER VERIFICATION</span><h2 id="owner-verify-title">Connect owner approval controls</h2><p>Enter the existing private owner access code once to establish the secure approval session on this device.</p><label class="field"><span>Owner access code</span><input id="owner-verify-code" type="password" autocomplete="off"></label><p class="form-error" id="owner-verify-error"></p><button class="button button-primary button-wide" id="owner-verify-submit" type="button">Verify owner</button></div>
+  </div>
+
+  <div class="modal-backdrop" id="background-report-viewer-modal" role="dialog" aria-modal="true" aria-labelledby="background-report-viewer-title">
+    <div class="modal-card background-report-viewer-card">
+      <button class="modal-close" type="button" data-action="close-background-report-viewer" aria-label="Close">×</button>
+      <div id="background-report-viewer-content"></div>
+      <div class="background-report-viewer-actions"><button class="button button-secondary" id="print-background-report" type="button">Print / save PDF</button><button class="button button-primary" type="button" data-action="close-background-report-viewer">Close report</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="accessible-answer-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="accessible-answer-confirm-title">
+    <div class="modal-card small-modal accessible-answer-confirm-card"><span class="eyebrow">FINAL ANSWER CHECK</span><h2 id="accessible-answer-confirm-title">Are you sure you want to commit this answer?</h2><p id="accessible-answer-confirm-copy">Your selected answer will be recorded and the assessment will move to the next question.</p><div class="accessible-confirm-actions"><button class="accessible-confirm-button no" id="accessible-answer-no" type="button"><span aria-hidden="true">✕</span><b>No — go back</b></button><button class="accessible-confirm-button yes" id="accessible-answer-yes" type="button"><span aria-hidden="true">✓</span><b>Yes — commit answer</b></button></div></div>
+  </div>
+
+  <div class="modal-backdrop" id="background-modal" role="dialog" aria-modal="true" aria-labelledby="background-modal-title">
+    <div class="modal-card background-modal-card">
+      <button class="modal-close" type="button" data-action="close-background" aria-label="Close">×</button>
+      <span class="eyebrow">DANCO+ · ADMINISTRATOR DEMONSTRATION</span>
+      <h2 id="background-modal-title">Approve background-screening request</h2>
+      <p class="lead small">Select a current public package-price reference, approve the cost and choose the prototype outcome you want to demonstrate. No provider is contacted and no payment is taken.</p>
+      <div class="background-payment-summary">
+        <div><span>Candidate</span><b id="background-candidate">—</b></div>
+        <label class="field compact-field"><span>Provider reference</span><select id="background-provider-select"></select></label>
+        <label class="field compact-field"><span>Screening package</span><select id="background-package-select"></select></label>
+        <div><span>Public starting price</span><b id="background-cost">—</b></div>
+        <div><span>Billing account</span><b id="background-provider">Danco provider account</b></div>
+        <div><span>Identity readiness</span><b id="background-identity">—</b></div>
+      </div>
+      <div class="background-package-detail" id="background-package-detail"></div>
+      <div class="demo-outcome-panel">
+        <div><span class="eyebrow">PROTOTYPE OUTCOME CONTROL</span><h3>Choose the result to demonstrate</h3><p>This selector exists only in prototype mode so both the successful and blocked hiring paths can be presented. A purchased/live release removes this selector; the provider returns the screening data and an authorized Danco reviewer makes the employment decision.</p></div>
+        <label class="field"><span>Demonstration outcome</span><select id="background-demo-result"><option value="eligible">Meets Danco criteria · demo PASS</option><option value="not_eligible">Does not meet Danco criteria · demo FAIL</option></select></label>
+      </div>
+      <div class="notice-card"><span>$</span><p>Public package prices are demonstration references only. A live integration would use Danco's own screening-provider account. Provider charges, taxes and court/database pass-through fees would be billed directly to Danco under its vendor agreement.</p></div>
+      <label class="field"><span>Approving administrator</span><input id="background-approved-by" maxlength="120" placeholder="Name"></label>
+      <label class="cost-approval-check"><input id="background-approval" type="checkbox"><span>I approve the displayed package cost and request this screening demonstration.</span></label>
+      <p class="form-error" id="background-error" role="alert"></p>
+      <button class="button button-primary button-wide" id="confirm-background-request" type="button">Approve cost &amp; run screening demo</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="contract-modal" role="dialog" aria-modal="true" aria-labelledby="contract-modal-title">
+    <div class="modal-card contract-modal-card">
+      <button class="modal-close" type="button" data-action="close-contract" aria-label="Close">×</button>
+      <span class="eyebrow">ADVANCED PROTOTYPE · ADMIN ONLY</span><h2 id="contract-modal-title">Create employment contract</h2>
+      <section id="contract-eligibility-step">
+        <p class="lead small" id="contract-eligibility-question">Does this applicant's background check meet the required Danco criteria?</p>
+        <p class="fine contract-eligibility-context" id="contract-eligibility-context"></p>
+        <div class="eligibility-buttons" id="contract-eligibility-buttons"><button class="button button-secondary" id="contract-eligibility-no" type="button">No</button><button class="button button-primary" id="contract-eligibility-yes" type="button">Yes</button></div>
+        <div class="notice-card contract-blocked" id="contract-blocked" hidden><span>!</span><p id="contract-blocked-copy">Contract creation cannot proceed. Please seek advice from senior staff before progressing this applicant.</p></div>
+      </section>
+      <section id="contract-form-step" hidden>
+        <p class="lead small">Applicant details are pre-filled from the stored Danco application. Complete the offer-specific details below.</p>
+        <div class="contract-prefill-summary" id="contract-prefill-summary"></div>
+        <div class="contract-form-grid">
+          <label class="field"><span>Role offered</span><select id="contract-role"><option value="">Choose role</option><option>Service Helper</option><option>Roofer</option><option>Foreman</option><option>Commercial Account Manager</option></select></label>
+          <label class="field"><span>Offer date</span><input id="contract-offer-date" type="date"></label>
+          <label class="field"><span>Offer valid through</span><input id="contract-offer-expiration" type="date"></label>
+          <label class="field"><span>Employment type</span><select id="contract-employment-type"><option>Full-time</option><option>Part-time</option><option>Temporary</option></select></label>
+          <label class="field"><span>FLSA classification</span><select id="contract-classification"><option>Hourly / non-exempt</option><option>Salaried / exempt</option><option>Salaried / non-exempt</option></select></label>
+          <label class="field"><span>Proposed start date</span><input id="contract-start-date" type="date"></label>
+          <label class="field"><span>Compensation</span><input id="contract-compensation" placeholder="e.g. $28.00 per hour or $70,000 annually"></label>
+          <label class="field"><span>Pay frequency</span><select id="contract-pay-frequency"><option>Weekly</option><option>Biweekly</option><option>Semimonthly</option></select></label>
+          <label class="field contract-wide"><span>Commission / incentive plan</span><input id="contract-commission" placeholder="Optional · e.g. Per separate Danco commission plan"></label>
+          <label class="field"><span>Primary work location</span><input id="contract-work-location" placeholder="Danco location / territory"></label>
+          <label class="field"><span>Reports to</span><input id="contract-supervisor" placeholder="Manager / supervisor"></label>
+          <label class="field"><span>Prepared by</span><input id="contract-created-by" maxlength="120" placeholder="Administrator name"></label>
+          <label class="field contract-wide"><span>Normal schedule</span><input id="contract-schedule" placeholder="e.g. Monday-Friday, 7:00 AM-4:00 PM; project needs may vary"></label>
+          <label class="field"><span>Introductory period</span><select id="contract-intro-period"><option>90 days</option><option>60 days</option><option>30 days</option><option>None specified</option></select></label>
+          <label class="field"><span>Benefits eligibility</span><input id="contract-benefits" placeholder="Per Danco plan terms"></label>
+          <label class="field"><span>PTO / leave</span><input id="contract-pto" placeholder="Per Danco policy"></label>
+          <label class="field"><span>Overtime</span><input id="contract-overtime" placeholder="Per classification and applicable law"></label>
+          <label class="field"><span>Travel / vehicle</span><input id="contract-travel" placeholder="As required by role"></label>
+          <label class="field"><span>Expense reimbursement</span><input id="contract-expenses" placeholder="Per Danco expense policy"></label>
+          <label class="field"><span>Company property / PPE</span><input id="contract-property" placeholder="Issued as required; return on separation"></label>
+          <label class="field"><span>Confidentiality / proprietary information</span><input id="contract-confidentiality" placeholder="Subject to Danco confidentiality and information-security policies"></label>
+          <label class="field"><span>Handbook / policy acknowledgment</span><input id="contract-policies" placeholder="Employee handbook and safety policies to be acknowledged"></label>
+          <label class="field contract-wide"><span>Payroll / direct-deposit onboarding</span><select id="contract-payroll"><option>Separate secure payroll enrollment required</option><option>Payroll enrollment completed separately</option><option>Not applicable / to be confirmed</option></select></label>
+          <label class="field contract-wide"><span>Additional offer terms</span><textarea id="contract-additional-terms" maxlength="1800" placeholder="Optional role-specific terms, allowances, contingencies or notes"></textarea></label>
+        </div>
+        <div class="notice-card"><span>i</span><p>Prototype template only. Fields may be left incomplete so the document format can be demonstrated. Banking account/routing details are intentionally excluded from the employment agreement and should be collected separately through Danco's secure payroll onboarding process. Final employment language should be reviewed by qualified U.S./Indiana employment counsel before production use.</p></div>
+        <p class="form-error" id="contract-error" role="alert"></p><button class="button button-primary button-wide" id="confirm-create-contract" type="button">Create pre-filled contract</button>
+      </section>
+      <section id="contract-preview-step" hidden>
+        <div id="contract-preview" class="contract-preview"></div>
+        <div class="contract-preview-actions"><button class="button button-secondary" id="print-contract" type="button">Print / save contract PDF</button><button class="button button-primary" data-action="close-contract" type="button">Done</button></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <aside class="creator-credit" aria-label="Design and production by Joseph Whelan EDS">
+    <span>Design &amp; Production by</span>
+    <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
+  </aside>
+
+  <script src="narration-manifest.js?v=36.0.0" defer></script>
+  <script src="app.js?v=36.0.0" defer></script>
+</body>
+</html>

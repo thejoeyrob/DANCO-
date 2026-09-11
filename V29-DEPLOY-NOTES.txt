@@ -1,0 +1,26 @@
+DANCO WORKFORCE ASSESSMENT — STANDARD + DANCO+ v29
+
+DEPLOYMENT
+Upload/replace all files at the root of the Danco GitHub Pages repository.
+Use the full package for a clean deployment or the update-only package over v28.1.
+
+KEY v29 CHANGES
+- Restored Danco+ background-check request / cost-approval dialog.
+- Prototype package choices use public Checkr/GoodHire reference prices:
+  Basic $29.99, Essential $59.99, Complete $94.99.
+- Prototype-only outcome selector can demonstrate a successful or unsuccessful screening.
+- Successful demo result auto-files to Background checked — Eligible.
+- Unsuccessful demo result flags an error, blocks contract creation and auto-files to Background checked — Not eligible.
+- Employment agreement may be created without an in-app background check when the administrator confirms a satisfactory check was supplied through another approved source.
+- Expanded employment-agreement / offer-terms template.
+- Agreement fields are optional for prototype demonstration/export.
+- Bank/routing details are intentionally excluded; use a separate secure payroll process.
+- Applicant narration remains English/Spanish with recorded + device-reader modes.
+
+BACKEND
+v29 uses:
+- danco-service-v5
+- danco-plus-access
+
+PRODUCTION RULE
+The prototype pass/fail selector is demonstration-only. A live CRA integration must not fabricate screening results or automatically make a hiring decision from sensitive screening data.

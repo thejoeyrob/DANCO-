@@ -1,0 +1,7 @@
+Danco Workforce Assessment — v35
+
+Artwork correction:
+- Removed the previous shape-built SVG leaderboard illustration.
+- Replaced it with a fully rendered cinematic image asset.
+- Updated the service worker and cache version so the replacement is forced on deployed devices.
+- Standing design rule for this build: substantive artwork must use rendered imagery; SVG/vector primitives remain only for functional UI, logos or diagrams.

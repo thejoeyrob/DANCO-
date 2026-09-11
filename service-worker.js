@@ -1,17 +1,17 @@
-importScripts('./narration-manifest.js?v=36.0.0');
+importScripts('./narration-manifest.js?v=37.0.0');
 
-const CACHE_NAME = 'danco-workforce-standard-plus-v36-admin-invites-accessibility-20260911';
+const CACHE_NAME = 'danco-workforce-standard-plus-v37-recorded-audio-polished-export-20260911';
 
 const OLD_BACKEND = 'https://danco-assessment-service.josephrwhelan.chatgpt.site';
 const NEW_BACKEND = 'https://uneqycntlykjedaaynou.supabase.co/functions/v1/danco-service-v5';
 
 const CORE_ASSETS = [
   './',
-  './index.html?v=36.0.0',
-  './app.css?v=36.0.0',
-  './app.js?v=36.0.0',
-  './narration-manifest.js?v=36.0.0',
-  './manifest.webmanifest?v=36.0.0',
+  './index.html?v=37.0.0',
+  './app.css?v=37.0.0',
+  './app.js?v=37.0.0',
+  './narration-manifest.js?v=37.0.0',
+  './manifest.webmanifest?v=37.0.0',
   './danco-logo.webp',
   './danco-logo-white.png',
   './danco-logo-gold.png',
@@ -58,8 +58,8 @@ const CORE_ASSETS = [
 ];
 
 const NARRATION_ASSETS = [
-  './narration-en.mp3?v=36.0.0',
-  './narration-es.mp3?v=36.0.0'
+  './narration-en.mp3?v=37.0.0',
+  './narration-es.mp3?v=37.0.0'
 ];
 
 const PITCH_AUDIO_ASSETS = [
@@ -75,11 +75,22 @@ const PITCH_AUDIO_ASSETS = [
   'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d73d3abe-fb7c-4f87-939e-19aef6d9bff0.mp3'
 ];
 
+const ACCESSIBILITY_CUE_ASSETS = [
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5af3a435-c7fd-4203-94f6-8f37473e433d.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9d9fabd1-cbae-4363-a54e-a238e85089ee.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/ec263a93-26c4-4590-b27c-ff79f159ee7f.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e9710e35-e9bf-4a64-87b2-6ff677e7e941.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/8ea35c74-83b8-4cf5-ae22-b671b9aa9817.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7371cd77-717d-4144-8628-80c7b7fa7098.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7de72f3a-4926-438b-859d-cd78ae446ce9.mp3',
+  'https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/6d198b65-1d5c-44b8-b2aa-2385b638edef.mp3'
+];
+
 self.addEventListener('install', event => event.waitUntil(
   caches.open(CACHE_NAME)
     .then(cache =>
       cache.addAll(CORE_ASSETS)
-        .then(() => Promise.allSettled([...NARRATION_ASSETS, ...PITCH_AUDIO_ASSETS].map(asset => cache.add(asset))))
+        .then(() => Promise.allSettled([...NARRATION_ASSETS, ...PITCH_AUDIO_ASSETS, ...ACCESSIBILITY_CUE_ASSETS].map(asset => cache.add(asset))))
     )
     .then(() => self.skipWaiting())
 ));
@@ -132,7 +143,7 @@ self.addEventListener('fetch', event => {
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
           return response;
         })
-        .catch(() => caches.match('./index.html?v=36.0.0'))
+        .catch(() => caches.match('./index.html?v=37.0.0'))
     );
     return;
   }

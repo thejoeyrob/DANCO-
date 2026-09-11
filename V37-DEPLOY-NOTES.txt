@@ -1,0 +1,11 @@
+Danco Workforce Assessment - Standard + Danco+ v37
+
+Key corrections:
+- Device/system TTS removed from the application. Recorded Danco audio is the only narration route. Premium audio failures fall back to bundled recorded narration, never the OS voice.
+- Sales Commercial Account Manager questions now use 60 seconds per question; roofing/other standard questions remain 45 seconds. Accessibility reveal mode remains 60 seconds after an untimed question review.
+- Sales leaderboard is collapsed by default and expands on demand.
+- Dark-on-dark admin and candidate-link contrast issues corrected.
+- Candidate PDF export replaced with a dedicated two-page branded report renderer. The admin dashboard, league table, workflow buttons, background-request controls and filing tools are excluded. Background screening appears only as a status strip when a screening record exists.
+- Genuine invited-candidate reports are identified by LINK- candidate reference and are not labelled prototype.
+- Background screening and employment agreement print layouts use the same navy/gold document family and compact A4 rules.
+- New service-worker cache version forces v37 assets to replace prior v36 CSS/JS.

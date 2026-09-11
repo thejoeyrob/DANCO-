@@ -10,10 +10,10 @@
   <meta property="og:image" content="social-preview.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="manifest.webmanifest?v=36.0.0">
+  <link rel="manifest" href="manifest.webmanifest?v=37.0.0">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="icon-192.png">
-  <link rel="stylesheet" href="app.css?v=36.0.0">
+  <link rel="stylesheet" href="app.css?v=37.0.0">
   <title>Danco Workforce Assessment · Prototype</title>
 </head>
 <body class="prototype-locked">
@@ -288,9 +288,8 @@
       <small data-i18n="repeatAudioHint">Hear the current instruction or question again.</small>
       <div class="voice-setup" id="narration-voice-setup">
         <span class="voice-label" data-i18n="voiceLabel">Narration voice</span>
-        <div class="voice-mode-toggle" role="group" aria-label="Narration voice">
-          <button type="button" class="active" data-voice-mode="recorded">Danco recorded</button>
-          <button type="button" data-voice-mode="device">Device reader</button>
+        <div class="voice-mode-toggle recorded-only" role="group" aria-label="Narration voice">
+          <button type="button" class="active" data-voice-mode="recorded">Danco recorded · only</button>
         </div>
         <div class="standard-voice-badge"><span aria-hidden="true">✓</span><div><b id="selected-voice-title" data-i18n="standardVoiceTitle">Danco recorded voice</b><small id="selected-voice-copy" data-i18n="standardVoiceCopy">Uses the optimized Danco narration pack whenever an exact recorded line is available.</small></div></div>
         <button class="button voice-test-button" type="button" data-action="test-narration"><span aria-hidden="true">▶</span><span data-i18n="testVoice">Test selected voice</span></button>
@@ -356,16 +355,19 @@
           <div><span class="eyebrow">DEVICE START MODE</span><h3 id="admin-mode-title">Lock this device to a route</h3><p>Choose whether this browser/device offers the workforce assessment only, the job application only, or lets the user choose after selecting a language.</p></div>
           <div class="mode-toggle mode-toggle-three" role="group" aria-label="Device start mode"><button type="button" data-admin-device-mode="assessment">Workforce assessment only</button><button type="button" data-admin-device-mode="application">Application only</button><button type="button" data-admin-device-mode="choice">Choice of either</button></div>
         </section>
-        <section class="sales-leaderboard-card" aria-labelledby="sales-leaderboard-title">
-          <div class="sales-leaderboard-hero">
-            <div class="sales-leaderboard-hero-copy"><span class="eyebrow">SALES ROLE · LIVE LEAGUE TABLE</span><h3 id="sales-leaderboard-title">Commercial Account Manager leaderboard</h3><p>Completed Commercial Account Manager reports appear here automatically unless archived, marked not eligible, or manually removed from the league table. Rank by overall suitability or any core sales attribute.</p><div class="leaderboard-chip-row"><span class="leaderboard-chip" id="sales-leaderboard-count">0 sales candidates</span><span class="leaderboard-chip">Click Overall, Experience, Network, Development, Consultative or Commercial to re-rank</span></div></div>
-            <div class="sales-leaderboard-winner-panel">
-              <div class="leaderboard-illustration-card"><img src="leaderboard-hero-rendered.png" alt="Illustration of a new employee being welcomed to Danco from behind"></div>
-              <div class="leaderboard-winner-copy"><small>CURRENT LEADER</small><h4 id="leaderboard-winner-name">Waiting for sales submissions</h4><span id="leaderboard-winner-role">Commercial Account Manager leaderboard</span><b id="leaderboard-winner-score">No ranked submissions yet</b><p id="leaderboard-winner-copy">Sales submissions will appear here after applicants complete the Commercial Account Manager route.</p></div>
+        <section class="sales-leaderboard-card collapsed-by-default" aria-labelledby="sales-leaderboard-title">
+          <button class="sales-leaderboard-collapse-toggle" id="sales-leaderboard-toggle" type="button" aria-expanded="false" aria-controls="sales-leaderboard-expanded"><span><small>SALES ROLE · LIVE LEAGUE TABLE</small><b id="sales-leaderboard-title">Commercial Account Manager leaderboard</b><em id="sales-leaderboard-summary-count">0 ranked</em></span><strong id="sales-leaderboard-toggle-action">Expand</strong></button>
+          <div id="sales-leaderboard-expanded" hidden>
+            <div class="sales-leaderboard-hero">
+              <div class="sales-leaderboard-hero-copy"><span class="eyebrow">SALES ROLE · LIVE LEAGUE TABLE</span><h3>Commercial Account Manager leaderboard</h3><p>Completed Commercial Account Manager reports appear here automatically unless archived, marked not eligible, or manually removed from the league table. Rank by overall suitability or any core sales attribute.</p><div class="leaderboard-chip-row"><span class="leaderboard-chip" id="sales-leaderboard-count">0 sales candidates</span><span class="leaderboard-chip">Click Overall, Experience, Network, Development, Consultative or Commercial to re-rank</span></div></div>
+              <div class="sales-leaderboard-winner-panel">
+                <div class="leaderboard-illustration-card"><img src="leaderboard-hero-rendered.png" alt="Illustration of a new employee being welcomed to Danco from behind"></div>
+                <div class="leaderboard-winner-copy"><small>CURRENT LEADER</small><h4 id="leaderboard-winner-name">Waiting for sales submissions</h4><span id="leaderboard-winner-role">Commercial Account Manager leaderboard</span><b id="leaderboard-winner-score">No ranked submissions yet</b><p id="leaderboard-winner-copy">Sales submissions will appear here after applicants complete the Commercial Account Manager route.</p></div>
+              </div>
             </div>
+            <div id="sales-leaderboard-wrap" class="sales-leaderboard-wrap"><div class="leaderboard-empty"><b>No sales suitability submissions yet.</b><span>Completed Commercial Account Manager applications and assessment-only results will build this league table automatically.</span></div></div>
+            <div class="leaderboard-removed" id="sales-leaderboard-removed" hidden><div><b>Removed from league table</b><span>These reports stay in their normal filing location and can be restored here at any time.</span></div><div id="sales-leaderboard-removed-list"></div></div>
           </div>
-          <div id="sales-leaderboard-wrap" class="sales-leaderboard-wrap"><div class="leaderboard-empty"><b>No sales suitability submissions yet.</b><span>Completed Commercial Account Manager applications and assessment-only results will build this league table automatically.</span></div></div>
-          <div class="leaderboard-removed" id="sales-leaderboard-removed" hidden><div><b>Removed from league table</b><span>These reports stay in their normal filing location and can be restored here at any time.</span></div><div id="sales-leaderboard-removed-list"></div></div>
         </section>
 
         <section class="stored-applications-card" aria-labelledby="stored-applications-title">
@@ -410,7 +412,7 @@
         </div>
         <div class="admin-actions">
           <button class="button button-secondary" id="load-example" type="button">Load example report</button>
-          <button class="button button-secondary" id="print-report" type="button">Print / save PDF</button>
+          <button class="button button-secondary" id="print-report" type="button">Preview / export polished PDF</button>
           <button class="button button-danger" id="reset-device" type="button">Reset applicant on this device</button>
         </div>
       </section>
@@ -522,6 +524,15 @@
     <div class="modal-card small-modal"><button class="modal-close" type="button" data-action="close-owner-verify" aria-label="Close">×</button><span class="eyebrow">OWNER VERIFICATION</span><h2 id="owner-verify-title">Connect owner approval controls</h2><p>Enter the existing private owner access code once to establish the secure approval session on this device.</p><label class="field"><span>Owner access code</span><input id="owner-verify-code" type="password" autocomplete="off"></label><p class="form-error" id="owner-verify-error"></p><button class="button button-primary button-wide" id="owner-verify-submit" type="button">Verify owner</button></div>
   </div>
 
+
+  <div class="modal-backdrop report-export-backdrop" id="report-export-modal" role="dialog" aria-modal="true" aria-label="Candidate report PDF preview">
+    <div class="modal-card report-export-modal-card">
+      <button class="modal-close" type="button" data-action="close-report-export" aria-label="Close">×</button>
+      <div class="report-export-toolbar"><div><span class="eyebrow">POLISHED DOCUMENT EXPORT</span><h2>Candidate assessment report</h2><p>Only confirmed report information is included. Administrator controls and workflow actions are excluded.</p></div><div><button class="button button-secondary" type="button" data-action="close-report-export">Close preview</button><button class="button button-primary" id="print-polished-report" type="button">Print / save PDF</button></div></div>
+      <div id="report-export-content" class="report-export-content"></div>
+    </div>
+  </div>
+
   <div class="modal-backdrop" id="background-report-viewer-modal" role="dialog" aria-modal="true" aria-labelledby="background-report-viewer-title">
     <div class="modal-card background-report-viewer-card">
       <button class="modal-close" type="button" data-action="close-background-report-viewer" aria-label="Close">×</button>
@@ -617,7 +628,7 @@
     <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
   </aside>
 
-  <script src="narration-manifest.js?v=36.0.0" defer></script>
-  <script src="app.js?v=36.0.0" defer></script>
+  <script src="narration-manifest.js?v=37.0.0" defer></script>
+  <script src="app.js?v=37.0.0" defer></script>
 </body>
 </html>
